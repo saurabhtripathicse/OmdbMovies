@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">OmdbMovies</string>
+    <string name="retry">retry</string>
+    <string name="no_internet_heading">Something went wrong..</string>
+    <string name="no_internet_message">An alien is probably blocking your signal.</string>
+    <string name="no_internet_image">no internet image</string>
+    <string name="actor">Actor</string>
+    <string name="director">Director</string>
+    <string name="plot">Plot</string>
+    <string name="production">Production</string>
+    <string name="box_office">Box Office</string>
+    <string name="movie_poster_image">Movie Poster Image</string>
+    <string name="gradient_back">gradient_back</string>
+    <string name="blur_poster_image">blur_poster_image</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="searched_list">Searched List</string>
+    <string name="search_movies_default_friends">Search Movies-Default : Friends</string>
+    <string name="search">search</string>
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar android:layout_width="match_parent"
+    android:layout_height="@dimen/_60dp"
+    android:layout_marginEnd="@dimen/_16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_4dp"
+        android:padding="@dimen/_4dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/search_text"
+            android:background="@drawable/border_white_down"
+            android:fontFamily="@font/roboto_medium"
+            android:paddingStart="@dimen/_16dp"
+            android:paddingEnd="@dimen/_16dp"
+            android:maxLines="1"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:layout_toStartOf="@+id/search_"
+            android:layout_marginEnd="@dimen/_8dp"
+            android:hint="@string/search_movies_default_friends"
+            android:importantForAutofill="no" />
+
+        <ImageButton
+            android:layout_width="@dimen/_48dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/search_"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:stateListAnimator="@animator/lift_on_touch"
+            android:tint="@color/darkGrey"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="@string/search"
+            android:background="@drawable/border_white_down"
+            android:src="@drawable/ic_search"/>
+
+    </RelativeLayout>
+
+</androidx.appcompat.widget.Toolbar>

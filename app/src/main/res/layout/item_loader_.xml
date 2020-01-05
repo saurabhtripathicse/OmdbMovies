@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/_8dp"
+    android:visibility="visible">
+
+    <ProgressBar
+        android:id="@+id/loading_list"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60dp"
+        android:paddingTop="@dimen/_4dp"
+        android:paddingBottom="@dimen/_4dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</LinearLayout>
