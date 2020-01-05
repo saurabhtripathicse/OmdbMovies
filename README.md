@@ -7,6 +7,8 @@
 - List of all bookmarks in one place.
 - Made in Kotlin.
 - MVVM Pattern.
+- Room 
+- DI
 
 **Used Libraries**
 
