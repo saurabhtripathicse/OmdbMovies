@@ -20,3 +20,14 @@
 - [Glide](https://github.com/bumptech/glide "Glide")
 - [shimmerlayout](https://github.com/team-supercharge/ShimmerLayout "shimmerlayout")
 
+**Screen Shot**
+
+[![Main Page](https://github.com/saurabhtripathicse/OmdbMovies/blob/master/screen_one.jpg "Main Page")](https://github.com/saurabhtripathicse/OmdbMovies/blob/master/screen_one.jpg "Main Page")
+
+[![Main Page](https://github.com/saurabhtripathicse/OmdbMovies/blob/master/screen_two.jpg "Main Page")](https://github.com/saurabhtripathicse/OmdbMovies/blob/master/screen_two.jpg "Main Page")
+
+[![Detail Page](https://github.com/saurabhtripathicse/OmdbMovies/blob/master/screen_three.jpg "Detail Page")](https://github.com/saurabhtripathicse/OmdbMovies/blob/master/screen_three.jpg "Detail Page")
+
+[![Bookmark](https://github.com/saurabhtripathicse/OmdbMovies/blob/master/screen_four.jpg "Bookmark")](https://github.com/saurabhtripathicse/OmdbMovies/blob/master/screen_four.jpg "Bookmark")
+
+
