@@ -28,6 +28,3 @@
 
 [![Detail Page](https://github.com/saurabhtripathicse/OmdbMovies/blob/master/screen_three.jpg "Detail Page")](https://github.com/saurabhtripathicse/OmdbMovies/blob/master/screen_three.jpg "Detail Page")
 
-[![Bookmark](https://github.com/saurabhtripathicse/OmdbMovies/blob/master/screen_four.jpg "Bookmark")](https://github.com/saurabhtripathicse/OmdbMovies/blob/master/screen_four.jpg "Bookmark")
-
-
