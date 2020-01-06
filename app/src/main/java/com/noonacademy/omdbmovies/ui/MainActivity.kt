@@ -150,8 +150,12 @@ class MainActivity : BaseActivity(), AdapterCallbackListener {
                 }
             }
             movie_list.layoutManager = layoutManager
+
+            val hash = LinkedHashSet<SearchDataListModel>()
+            hash.addAll(repoListData)
+            hash.addAll(it)
             repoListData.clear()
-            repoListData.addAll(it)
+            repoListData.addAll(hash)
             adapter.notifyDataSetChanged()
 
         })

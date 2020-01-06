@@ -83,13 +83,7 @@ constructor( bookMarkDao: BookMarkDao, apiService: ApiService):
                         loadingLiveData.postValue(false)
                         showErrorRetry.postValue(false)
 
-                        if(searchDataListModelHashSet.isNotEmpty()){
-                            val temp = searchDataListModelHashSet
-                            searchDataListModelHashSet.addAll(temp)
-                        }
-                        searchDataListModelHashSet.addAll(response.searchDataListModels)
-                        
-                        moviesDataList.postValue(searchDataListModelHashSet.toList())
+                        moviesDataList.postValue(response.searchDataListModels)
                     },
                     {
                     })

@@ -7,4 +7,7 @@ data class MoviesDataModel (
 	@SerializedName("Search") var searchDataListModels : List<SearchDataListModel>,
 	@SerializedName("totalResults") var totalResults : Int,
 	@SerializedName("Response") var response : Boolean
-)
+){
+
+
+}

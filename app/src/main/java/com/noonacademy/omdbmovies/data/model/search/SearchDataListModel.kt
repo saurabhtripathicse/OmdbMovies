@@ -11,4 +11,5 @@ data class SearchDataListModel (
 	@SerializedName("Type") var type : String,
 	@SerializedName("Poster") var poster : String,
 	var bookmark: Boolean = false
-)
+){
+}
