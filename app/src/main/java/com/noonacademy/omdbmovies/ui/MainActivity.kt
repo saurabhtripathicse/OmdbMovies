@@ -141,6 +141,7 @@ class MainActivity : BaseActivity(), AdapterCallbackListener {
             .get(MainActivityViewModel::class.java)
 
         mainActivityViewModel.getMoviesList().observe(this, Observer {
+
             layoutManager.spanSizeLookup = object : SpanSizeLookup() {
                 override fun getSpanSize(position: Int): Int {
                     return if (adapter.showHeader() && position == 0 || adapter.showingLoader(
@@ -151,11 +152,9 @@ class MainActivity : BaseActivity(), AdapterCallbackListener {
             }
             movie_list.layoutManager = layoutManager
 
-            val hash = LinkedHashSet<SearchDataListModel>()
-            hash.addAll(repoListData)
-            hash.addAll(it)
             repoListData.clear()
-            repoListData.addAll(hash)
+            repoListData.addAll(it)
+
             adapter.notifyDataSetChanged()
 
         })

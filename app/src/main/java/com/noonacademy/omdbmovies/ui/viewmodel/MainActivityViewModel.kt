@@ -1,6 +1,5 @@
 package com.noonacademy.omdbmovies.ui.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.noonacademy.omdbmovies.constant_.AppConstants.DEFAULT_SEARCH_KEY
@@ -22,7 +21,7 @@ constructor( bookMarkDao: BookMarkDao, apiService: ApiService):
 
     private val repository: MoviesRepository = MoviesRepository(bookMarkDao, apiService)
 
-    val searchDataListModelHashSet = LinkedHashSet<SearchDataListModel>()
+    private val searchDataListModel = ArrayList<SearchDataListModel>()
 
     private var compositeDisposable = CompositeDisposable()
 
@@ -55,10 +54,11 @@ constructor( bookMarkDao: BookMarkDao, apiService: ApiService):
     }
 
     private fun handleResponse(response: MoviesDataModel) {
-        if (response.response) {
-            checkBookMarkList(response)
+        if (response.response && response.searchDataListModels.isNotEmpty()) {
+            searchDataListModel.addAll(response.searchDataListModels)
+            checkBookMarkList()
         } else {
-            checkBookMarkList(response)
+            checkBookMarkList()
         }
     }
 
@@ -68,22 +68,19 @@ constructor( bookMarkDao: BookMarkDao, apiService: ApiService):
         error.printStackTrace()
     }
 
-    private fun checkBookMarkList(response: MoviesDataModel){
+    private fun checkBookMarkList() {
         compositeDisposable.add(
             repository.getBookMark()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                     {
-                        Log.i("APPDATA", it.toString())
                         moviesBookMarkList.postValue(it)
-                        response.searchDataListModels.forEach { search->
+                        searchDataListModel.forEach { search->
                             search.bookmark = it.any { data -> data.imdbID == search.imdbID}
-
                         }
                         loadingLiveData.postValue(false)
                         showErrorRetry.postValue(false)
-
-                        moviesDataList.postValue(response.searchDataListModels)
+                        moviesDataList.postValue(searchDataListModel)
                     },
                     {
                     })

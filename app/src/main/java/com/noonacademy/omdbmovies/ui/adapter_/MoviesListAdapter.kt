@@ -129,7 +129,6 @@ class MoviesListAdapter(
             circularProgressDrawable.centerRadius = 30f
             circularProgressDrawable.start()
 
-
             Glide
                 .with(itemView.context)
                 .load(item.poster)
@@ -140,10 +139,6 @@ class MoviesListAdapter(
             itemView.title.text = item.title
             itemView.type.text = item.type
             itemView.year.text = item.year
-
-
-            //Log.i("APPDATA", searchDataListModel.bookmark.toString())
-
 
             if (item.bookmark) {
                 Glide
@@ -172,11 +167,9 @@ class MoviesListAdapter(
                 )
 
                 if (item.bookmark) {
-
                     updateData.deleteBookmark(bookMarkListModel, position)
 
                 } else {
-
                     updateData.updateBookmark(bookMarkListModel, position)
                 }
             }
