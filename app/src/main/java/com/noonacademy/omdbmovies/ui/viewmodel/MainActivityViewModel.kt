@@ -22,6 +22,8 @@ constructor( bookMarkDao: BookMarkDao, apiService: ApiService):
 
     private val repository: MoviesRepository = MoviesRepository(bookMarkDao, apiService)
 
+    val searchDataListModelHashSet = LinkedHashSet<SearchDataListModel>()
+
     private var compositeDisposable = CompositeDisposable()
 
     private val loadingLiveData = MutableLiveData<Boolean>()
@@ -66,7 +68,7 @@ constructor( bookMarkDao: BookMarkDao, apiService: ApiService):
         error.printStackTrace()
     }
 
-    fun checkBookMarkList(response: MoviesDataModel){
+    private fun checkBookMarkList(response: MoviesDataModel){
         compositeDisposable.add(
             repository.getBookMark()
                 .observeOn(AndroidSchedulers.mainThread())
@@ -80,7 +82,14 @@ constructor( bookMarkDao: BookMarkDao, apiService: ApiService):
                         }
                         loadingLiveData.postValue(false)
                         showErrorRetry.postValue(false)
-                        moviesDataList.postValue(response.searchDataListModels)
+
+                        if(searchDataListModelHashSet.isNotEmpty()){
+                            val temp = searchDataListModelHashSet
+                            searchDataListModelHashSet.addAll(temp)
+                        }
+                        searchDataListModelHashSet.addAll(response.searchDataListModels)
+                        
+                        moviesDataList.postValue(searchDataListModelHashSet.toList())
                     },
                     {
                     })
